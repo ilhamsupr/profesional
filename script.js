@@ -57,23 +57,24 @@ window.onclick = function (event) {
 
 
 /* start contact */
-  document.addEventListener("DOMContentLoaded", function () {
-    const contactForm = document.querySelector(".contact-form");
-    const whatsappNumber = "6283895775553"; // Ganti dengan nomor kamu (awali dengan 62)
+document.addEventListener("DOMContentLoaded", function () {
+  const contactForm = document.querySelector(".contact-form");
+  const whatsappNumber = "6283895775553"; // Ganti dengan nomor kamu
 
-    contactForm.addEventListener("submit", function (e) {
-      e.preventDefault(); // Mencegah submit default ke Formspree
+  contactForm.addEventListener("submit", function (e) {
+    e.preventDefault(); // Mencegah form submit default
 
-      const name = contactForm.elements["name"].value;
-      const email = contactForm.elements["email"].value;
-      const message = contactForm.elements["message"].value;
+    const name = contactForm.elements["name"].value;
+    const email = contactForm.elements["email"].value;
+    const message = contactForm.elements["message"].value;
 
-      const fullMessage = `Halo, saya ${name} (${email}) ingin menghubungi Anda.%0A%0A${encodeURIComponent(message)}`;
-      const waLink = `https://wa.me/${whatsappNumber}?text=${fullMessage}`;
+    const fullMessage = `Halo, saya ${name} (${email}) ingin menghubungi Anda.%0A%0A${encodeURIComponent(message)}`;
+    const waLink = `https://wa.me/${whatsappNumber}?text=${fullMessage}`;
 
-      window.open(waLink, "_blank");
-    });
+    window.open(waLink, "_blank"); // Buka link WA di tab baru
   });
+});
+
 
 
 
