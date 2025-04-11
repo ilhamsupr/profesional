@@ -57,35 +57,24 @@ window.onclick = function (event) {
 
 
 /* start contact */
+  document.addEventListener("DOMContentLoaded", function () {
+    const contactForm = document.querySelector(".contact-form");
+    const whatsappNumber = "6283895775553"; // Ganti dengan nomor kamu (awali dengan 62)
 
-document.addEventListener("DOMContentLoaded", function () {
-  const whatsappNumber = "6283895775553"; // Nomor WhatsApp tujuan (62 = Indonesia)
-  const contactForm = document.querySelector(".contact-form");
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault(); // Mencegah submit default ke Formspree
 
-  if (!contactForm) {
-    console.error("Form with class 'contact-form' not found.");
-    return;
-  }
+      const name = contactForm.elements["name"].value;
+      const email = contactForm.elements["email"].value;
+      const message = contactForm.elements["message"].value;
 
-  contactForm.addEventListener("submit", function (e) {
-    e.preventDefault(); // Mencegah form submit normal
+      const fullMessage = `Halo, saya ${name} (${email}) ingin menghubungi Anda.%0A%0A${encodeURIComponent(message)}`;
+      const waLink = `https://wa.me/${whatsappNumber}?text=${fullMessage}`;
 
-    const name = contactForm.elements["name"].value.trim();
-    const email = contactForm.elements["email"].value.trim();
-    const message = contactForm.elements["message"].value.trim();
-
-    if (!name || !email || !message) {
-      alert("Please fill out all fields.");
-      return;
-    }
-
-    const whatsappMessage =
-      `Halo, saya ${name} (${email}).%0A%0A` + encodeURIComponent(message);
-
-    const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
-
-    window.open(whatsappLink, "_blank"); // Buka WhatsApp di tab baru
+      window.open(waLink, "_blank");
+    });
   });
-});
+
+
 
 /* end contact */
