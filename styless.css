@@ -1,0 +1,485 @@
+/* Reset dan box-sizing universal */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    scroll-behavior: smooth;
+  }
+  
+  /* Gaya dasar untuk body */
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Navbar utama */
+  .navbar {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.6), 0 0 10px rgba(0, 255, 255, 0.4);
+    position: fixed; /* fix agar selalu di atas */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  
+  
+  /* Logo dengan gradasi warna teks */
+  .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: aqua;
+    /* background: linear-gradient(to right, white, aqua, navy);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+  }
+  
+  .logo span {
+    color: blue;
+  }
+
+
+  /* Link navigasi */
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem; /* Jarak antar item */
+  }
+  
+  /* Gaya untuk link */
+  .nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+    padding: 10px;
+    background-color: black;
+    border-radius: 30px
+  }
+  
+  /* Hover effect pada link */
+  .nav-links li a:hover {
+    background: linear-gradient(to right, white, aqua, navy); /* Efek gradasi saat hover */
+    border-radius: 30px;
+    padding: 10px;
+    color: black;
+  }
+  
+  /* Tombol menu toggle untuk mobile */
+  .menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  /* end navbar */
+
+
+
+
+/* start home */
+.home-section {
+  color: white;
+  padding: 80px 20px;
+  height: 100vh;
+  background-color: black;
+}
+
+/* Container utama */
+.home-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  column-gap: 2rem; /* Tambah sedikit jarak */
+  row-gap: 2rem;
+}
+
+/* Bagian gambar */
+.home-image {
+  flex: 1 1 40%;
+  min-width: 280px;
+  display: flex;
+  justify-content: center;
+  padding-left: 30px;
+}
+
+.home-image img {
+  width: 300px; /* Disesuaikan agar tidak terlalu besar di mobile */
+  height: 300px;
+  border-radius: 50%;
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+  object-fit: cover;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transform: scale(1);
+  margin: 20px;
+}
+
+.home-image img:hover {
+  box-shadow: 0 10px 30px rgba(0, 255, 191, 0.5);
+  transform: scale(1.05);
+}
+
+.home-text {
+  flex: 1 1 50%;
+  min-width: 280px;
+}
+
+.home-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  max-width: auto;
+
+  background: linear-gradient(to right, white, aqua, darkblue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+
+.home-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  /* width: 70%; */
+}
+
+.home-btn {
+  background-color: aqua;
+  color: black;
+  padding: 12px 30px;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: 0.3s ease-in-out;
+}
+
+.home-btn:hover {
+  background: linear-gradient(to right, white, aqua, navy);
+  color: black;
+}
+
+
+/* Sosial Media */
+.home-socials {
+  margin-bottom: 20px;
+}
+
+.home-socials a {
+  color: aqua;
+  font-size: 1.5rem;
+  margin-right: 15px;
+  text-decoration: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.home-socials a:hover {
+  color: white;
+  transform: scale(1.2);
+}
+
+
+
+ /* end home */
+
+
+
+  
+
+
+ /* start certificat */
+
+ .certificate-section {
+  padding: 60px 20px;
+  background-color:black;
+  color: white;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: aqua;
+  margin-bottom: 30px;
+}
+
+.certificate-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.certificate-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.certificate-item {
+  background-color: #1a1a1a;
+  padding: 15px;
+  border-radius: 12px;
+  width: 250px;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+}
+
+.certificate-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.certificate-item p {
+  margin-top: 10px;
+  color: #ccc;
+  font-size: 1rem;
+}
+
+/* Tombol Lihat Sertifikat */
+.certificate-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: aqua;
+  color: #111;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.certificate-btn:hover {
+  background: linear-gradient(to right, white, aqua, navy); /* Efek gradasi saat hover */
+  color: #000;
+}
+
+.certificate-item img {
+  width: 100%;
+  height: 180px; /* Atur tinggi tetap */
+  object-fit: cover; /* Pangkas gambar agar pas tanpa merusak rasio */
+  border-radius: 8px;
+}
+
+
+
+ /* end certificat */
+
+
+ /* start portfolio */
+
+ .portfolio-section {
+  padding: 80px 30px;
+  background-color:black;
+  color: white;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.portfolio-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.portfolio-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.portfolio-item {
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 14px;
+  width: 300px;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 18px rgba(0, 255, 255, 0.5);
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.portfolio-item p {
+  margin-top: 12px;
+  color: #ccc;
+  font-size: 1.1rem;
+}
+
+.portfolio-btn {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 10px 20px;
+  background-color: aqua;
+  color: #111;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.portfolio-btn:hover {
+  background: linear-gradient(to right, white, aqua, navy); /* Efek gradasi saat hover */
+  color: #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Modal background untuk tampilan fullscreen */
+.modal {
+  display: none; /* Sembunyikan secara default */
+  position: fixed; /* Tetap di posisi layar */
+  z-index: 999; /* Supaya tampil paling depan */
+  padding-top: 60px; /* Jarak dari atas */
+  left: 0;
+  top: 0;
+  width: 100%; /* Lebar penuh layar */
+  height: 100%; /* Tinggi penuh layar */
+  overflow: auto; /* Aktifkan scroll jika konten melebihi layar */
+  background-color: rgba(0,0,0,0.9); /* Warna latar transparan gelap */
+}
+
+/* Gambar di dalam modal */
+.modal-content {
+  margin: auto; /* Posisikan di tengah */
+  display: block;
+  max-width: 90%; /* Maksimal lebar gambar */
+  max-height: 80vh; /* Maksimal tinggi gambar */
+  border-radius: 12px; /* Sudut melengkung */
+}
+
+/* Tombol (X) untuk menutup modal */
+.modal-close {
+  position: absolute;
+  top: 20px; /* Dari atas */
+  right: 35px; /* Dari kanan */
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: aqua; /* Warna saat hover */
+}
+
+/* Tombol kecilkan gambar (di tengah bawah layar) */
+#minimize-btn {
+  position: absolute;
+  bottom: 40px; /* Jarak dari bawah layar */
+  left: 50%; /* Pusat horizontal */
+  transform: translateX(-50%); /* Benar-benar di tengah */
+  background-color: aqua;
+  color: #111;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+#minimize-btn:hover {
+  background-color: white;
+  color: black;
+}
+
+
+
+/* end portfolio */
+
+
+/* start contact */
+.contact-section {
+  padding: 60px 20px;
+  background-color:black;
+  color: aqua;
+  text-align: center;
+  height: 100vh;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #222;
+  color: white;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #999;
+}
+
+.contact-btn {
+  background-color: aqua;
+  color: #111;
+  font-weight: bold;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: white;
+  color: #000;
+}
+
+.contact-info {
+  margin-top: 30px;
+  font-size: 0.95rem;
+  color: white;
+}
+
+
+/* end contact */
