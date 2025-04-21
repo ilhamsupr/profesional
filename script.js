@@ -110,9 +110,11 @@ function closeModal() {
 // Fungsi untuk mengecilkan video
 function minimizeVideo() {
   var video = document.getElementById("video01");
+  var minimizeBtn = document.getElementById("minimize-btn");
 
-  // Menyembunyikan video atau memperkecilnya
-  video.style.maxWidth = "30%"; // Ubah ukuran lebar video saat minimize
-  video.style.maxHeight = "30vh"; // Ubah ukuran tinggi video saat minimize
-  document.getElementById("minimize-btn").style.display = "none"; // Sembunyikan tombol minimize
+  // Menyembunyikan video
+  video.style.display = "none"; // Sembunyikan video
+  
+  // Menyembunyikan tombol minimize
+  minimizeBtn.style.display = "none";
 }
