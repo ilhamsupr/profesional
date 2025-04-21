@@ -91,9 +91,9 @@ function toggleVideo() {
   var videoSource = document.getElementById("videoSource");
 
   // Set video source dan mulai video
-  videoSource.src = "gambar/rakit.mp4";
-  video.load();
-  video.play();
+  videoSource.src = "gambar/rakit.mp4";  // Pastikan sumber video yang tepat
+  video.load();  // Memuat ulang video
+  video.play();  // Memutar video
 
   // Tampilkan modal dan enable pointer events
   modal.style.display = "block";
