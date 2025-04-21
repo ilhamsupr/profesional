@@ -84,21 +84,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // vidio rakit pc
-// Fungsi untuk membuka modal dan memutar video
+// Fungsi untuk membuka video modal
 function toggleVideo() {
   var modal = document.getElementById("customModal");
   var video = document.getElementById("video01");
   var videoSource = document.getElementById("videoSource");
 
-  // Set video source dan mulai video
-  videoSource.src = "gambar/rakit.mp4";  // Pastikan sumber video yang tepat
-  video.load();  // Memuat ulang video untuk reset
-  video.play();  // Memutar video
+  // Pastikan video dimulai dari awal
+  videoSource.src = "gambar/rakit.mp4"; // Ubah ini sesuai video yang diinginkan
+  video.load(); // Memuat ulang video
+  video.play(); // Memutar video
 
-  // Tampilkan modal dan enable pointer events
+  // Tampilkan modal dan tombol minimize
   modal.style.display = "block";
-  modal.style.pointerEvents = "auto";
-  document.getElementById("minimize-btn").style.display = "block"; // Tampilkan tombol minimize
+  document.getElementById("minimize-btn").style.display = "block";
 }
 
 // Fungsi untuk menutup modal
@@ -110,19 +109,17 @@ function closeModal() {
   modal.style.display = "none";
   video.pause(); // Hentikan video
   video.currentTime = 0; // Kembali ke awal video
-  modal.style.pointerEvents = "none"; // Disable pointer events saat modal disembunyikan
   document.getElementById("minimize-btn").style.display = "none"; // Sembunyikan tombol minimize
 }
 
-// Fungsi untuk mengecilkan video dan mengembalikan tampilan ke kondisi semula
+// Fungsi untuk mengecilkan video
 function minimizeVideo() {
   var modal = document.getElementById("customModal");
   var video = document.getElementById("video01");
-  var minimizeBtn = document.getElementById("minimize-btn");
 
   // Sembunyikan video dan tombol minimize
   video.style.display = "none"; // Sembunyikan video
-  minimizeBtn.style.display = "none"; // Sembunyikan tombol minimize
+  document.getElementById("minimize-btn").style.display = "none"; // Sembunyikan tombol minimize
 
   // Hentikan video dan reset ke kondisi semula
   video.pause(); // Hentikan video
@@ -130,10 +127,10 @@ function minimizeVideo() {
 
   // Sembunyikan modal dan reset tampilan seperti sebelum video diputar
   setTimeout(function() {
-      modal.style.display = "none"; // Sembunyikan modal
-      modal.style.pointerEvents = "none"; // Disable pointer events setelah modal disembunyikan
+    modal.style.display = "none"; // Sembunyikan modal
   }, 300); // Tunggu beberapa detik sebelum menyembunyikan modal
 }
+
 
 
 

@@ -417,32 +417,31 @@
 /* Modal background untuk tampilan fullscreen */
 .custom-modal {
   display: none; /* Sembunyikan secara default */
-  position: fixed; /* Tetap di posisi layar */
-  z-index: 999; /* Supaya tampil paling depan */
-  padding-top: 60px; /* Jarak dari atas */
+  position: fixed;
+  z-index: 999;
+  padding-top: 60px;
   left: 0;
   top: 0;
-  width: 100%; /* Lebar penuh layar */
-  height: 100%; /* Tinggi penuh layar */
-  overflow: auto; /* Aktifkan scroll jika konten melebihi layar */
-  background-color: rgba(0, 0, 0, 0.9); /* Warna latar transparan gelap */
-  pointer-events: none; /* Disable pointer events saat modal tidak aktif */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
-/* Video di dalam modal */
+/* Gambar/video dalam modal */
 .modal-content {
-  margin: auto; /* Posisikan di tengah */
+  margin: auto;
   display: block;
-  max-width: 90%; /* Maksimal lebar video */
-  max-height: 80vh; /* Maksimal tinggi video */
-  border-radius: 12px; /* Sudut melengkung */
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 12px;
 }
 
 /* Tombol (X) untuk menutup modal */
 .modal-close {
   position: absolute;
-  top: 20px; /* Dari atas */
-  right: 35px; /* Dari kanan */
+  top: 20px;
+  right: 35px;
   color: #fff;
   font-size: 40px;
   font-weight: bold;
@@ -450,15 +449,15 @@
 }
 
 .modal-close:hover {
-  color: aqua; /* Warna saat hover */
+  color: aqua;
 }
 
-/* Tombol kecilkan video (di tengah bawah layar) */
+/* Tombol kecil untuk minimalkan video */
 #minimize-btn {
   position: absolute;
-  bottom: 40px; /* Jarak dari bawah layar */
-  left: 50%; /* Pusat horizontal */
-  transform: translateX(-50%); /* Benar-benar di tengah */
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: aqua;
   color: #111;
   padding: 10px 20px;
