@@ -84,28 +84,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // vidio rakit pc
-// Function to toggle custom modal and display video
-function toggleVideo(videoSrc) {
-  // Get the custom modal and video element
-  var customModal = document.getElementById("customModal");
-  var modalVideo = document.getElementById("video01");
+// Fungsi untuk membuka modal dan memutar video
+function toggleImage(videoSrc) {
+  var modal = document.getElementById("customModal");
+  var video = document.getElementById("video01");
+  var videoSource = document.getElementById("videoSource");
 
-  // Open the modal and display the video
-  customModal.style.display = "block";
-  modalVideo.src = videoSrc;
+  videoSource.src = videoSrc; // Atur sumber video
+  video.load(); // Muat ulang video
+  video.play(); // Mainkan video
 
-  // Close the modal when clicked on X
-  var closeBtn = document.getElementsByClassName("modal-close")[0];
-  closeBtn.onclick = function() {
-    customModal.style.display = "none";
-    modalVideo.pause(); // Pause video when closing
-  }
-
-  // Minimize video size when clicked
-  var minimizeBtn = document.getElementById("minimize-btn");
-  minimizeBtn.onclick = function() {
-    modalVideo.style.maxWidth = "50%";
-    modalVideo.style.maxHeight = "50vh";
-  }
+  modal.style.display = "block"; // Tampilkan modal
 }
 
+// Fungsi untuk menutup modal
+function closeModal() {
+  var modal = document.getElementById("customModal");
+  var video = document.getElementById("video01");
+  
+  modal.style.display = "none"; // Sembunyikan modal
+  video.pause(); // Hentikan video
+  video.currentTime = 0; // Kembali ke awal video
+}
+
+// Fungsi untuk mengecilkan video
+function minimizeVideo() {
+  var video = document.getElementById("video01");
+
+  // Menyembunyikan video atau memperkecilnya
+  video.style.maxWidth = "30%"; // Ubah ukuran lebar video saat minimize
+  video.style.maxHeight = "30vh"; // Ubah ukuran tinggi video saat minimize
+  document.getElementById("minimize-btn").style.display = "none"; // Sembunyikan tombol minimize
+}
