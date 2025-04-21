@@ -92,7 +92,7 @@ function toggleVideo() {
 
   // Set video source dan mulai video
   videoSource.src = "gambar/rakit.mp4";  // Pastikan sumber video yang tepat
-  video.load();  // Memuat ulang video
+  video.load();  // Memuat ulang video untuk reset
   video.play();  // Memutar video
 
   // Tampilkan modal dan enable pointer events
@@ -134,5 +134,6 @@ function minimizeVideo() {
       modal.style.pointerEvents = "none"; // Disable pointer events setelah modal disembunyikan
   }, 300); // Tunggu beberapa detik sebelum menyembunyikan modal
 }
+
 
 
