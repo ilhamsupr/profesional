@@ -414,34 +414,34 @@
 
 
 /* vidio rakit pc */
-/* Custom Modal background for fullscreen display */
+/* Modal background untuk tampilan fullscreen */
 .custom-modal {
-  display: none; /* Hide by default */
-  position: fixed; /* Fixed position on screen */
-  z-index: 999; /* Ensure it is on top */
-  padding-top: 60px; /* Space from top */
+  display: none; /* Sembunyikan secara default */
+  position: fixed; /* Tetap di posisi layar */
+  z-index: 999; /* Supaya tampil paling depan */
+  padding-top: 60px; /* Jarak dari atas */
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scrolling if content exceeds screen */
-  background-color: rgba(0, 0, 0, 0.9); /* Transparent dark background */
+  width: 100%; /* Lebar penuh layar */
+  height: 100%; /* Tinggi penuh layar */
+  overflow: auto; /* Aktifkan scroll jika konten melebihi layar */
+  background-color: rgba(0, 0, 0, 0.9); /* Warna latar transparan gelap */
 }
 
-/* Image inside the custom modal */
+/* Video di dalam modal */
 .modal-content {
-  margin: auto; /* Center the image */
+  margin: auto; /* Posisikan di tengah */
   display: block;
-  max-width: 90%; /* Max width of the image */
-  max-height: 80vh; /* Max height of the image */
-  border-radius: 12px; /* Rounded corners */
+  max-width: 90%; /* Maksimal lebar video */
+  max-height: 80vh; /* Maksimal tinggi video */
+  border-radius: 12px; /* Sudut melengkung */
 }
 
-/* Close button (X) */
+/* Tombol (X) untuk menutup modal */
 .modal-close {
   position: absolute;
-  top: 20px; /* From top */
-  right: 35px; /* From right */
+  top: 20px; /* Dari atas */
+  right: 35px; /* Dari kanan */
   color: #fff;
   font-size: 40px;
   font-weight: bold;
@@ -449,15 +449,15 @@
 }
 
 .modal-close:hover {
-  color: aqua; /* Hover color */
+  color: aqua; /* Warna saat hover */
 }
 
-/* Minimize button (at the bottom center of the screen) */
+/* Tombol kecilkan video (di tengah bawah layar) */
 #minimize-btn {
   position: absolute;
-  bottom: 40px; /* Distance from the bottom */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Exact center */
+  bottom: 40px; /* Jarak dari bawah layar */
+  left: 50%; /* Pusat horizontal */
+  transform: translateX(-50%); /* Benar-benar di tengah */
   background-color: aqua;
   color: #111;
   padding: 10px 20px;
@@ -471,6 +471,7 @@
   background-color: white;
   color: black;
 }
+
 
 
 
