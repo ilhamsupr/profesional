@@ -114,23 +114,25 @@ function closeModal() {
   document.getElementById("minimize-btn").style.display = "none"; // Sembunyikan tombol minimize
 }
 
-// Fungsi untuk mengecilkan video
+// Fungsi untuk mengecilkan video dan mengembalikan tampilan ke kondisi semula
 function minimizeVideo() {
+  var modal = document.getElementById("customModal");
   var video = document.getElementById("video01");
   var minimizeBtn = document.getElementById("minimize-btn");
 
-  // Hentikan video dan sembunyikan elemen terkait
-  video.pause(); // Hentikan video
+  // Sembunyikan video dan tombol minimize
   video.style.display = "none"; // Sembunyikan video
   minimizeBtn.style.display = "none"; // Sembunyikan tombol minimize
 
-  // Kembalikan modal ke kondisi semula
-  var modal = document.getElementById("customModal");
-  modal.style.pointerEvents = "none"; // Nonaktifkan pointer events saat video disembunyikan
+  // Hentikan video dan reset ke kondisi semula
+  video.pause(); // Hentikan video
+  video.currentTime = 0; // Kembali ke awal video
 
-  // Menampilkan kembali modal jika pengguna ingin menutup atau mengklik
+  // Sembunyikan modal dan reset tampilan seperti sebelum video diputar
   setTimeout(function() {
-      modal.style.pointerEvents = "auto"; // Enable kembali pointer events saat modal masih ada
-  }, 100); // Delay kecil agar tidak berinteraksi sebelum video benar-benar hilang
+      modal.style.display = "none"; // Sembunyikan modal
+      modal.style.pointerEvents = "none"; // Disable pointer events setelah modal disembunyikan
+  }, 300); // Tunggu beberapa detik sebelum menyembunyikan modal
 }
+
 
