@@ -95,16 +95,18 @@ function toggleImage(videoSrc) {
   video.play(); // Mainkan video
 
   modal.style.display = "block"; // Tampilkan modal
+  modal.style.pointerEvents = "auto"; // Enable pointer events di dalam modal
 }
 
 // Fungsi untuk menutup modal
 function closeModal() {
   var modal = document.getElementById("customModal");
   var video = document.getElementById("video01");
-  
+
   modal.style.display = "none"; // Sembunyikan modal
   video.pause(); // Hentikan video
   video.currentTime = 0; // Kembali ke awal video
+  modal.style.pointerEvents = "none"; // Disable pointer events ketika modal tersembunyi
 }
 
 // Fungsi untuk mengecilkan video
@@ -114,7 +116,12 @@ function minimizeVideo() {
 
   // Menyembunyikan video
   video.style.display = "none"; // Sembunyikan video
-  
+
   // Menyembunyikan tombol minimize
   minimizeBtn.style.display = "none";
+
+  // Pastikan modal masih bisa dioperasikan dan tombol dapat ditekan
+  var modal = document.getElementById("customModal");
+  modal.style.pointerEvents = "auto"; // Enable pointer events untuk elemen lain
+  video.pause(); // Hentikan video ketika diminimize
 }

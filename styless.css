@@ -426,6 +426,7 @@
   height: 100%; /* Tinggi penuh layar */
   overflow: auto; /* Aktifkan scroll jika konten melebihi layar */
   background-color: rgba(0, 0, 0, 0.9); /* Warna latar transparan gelap */
+  pointer-events: auto; /* Enable event untuk tombol dan klik */
 }
 
 /* Video di dalam modal */
@@ -471,6 +472,7 @@
   background-color: white;
   color: black;
 }
+
 
 
 
