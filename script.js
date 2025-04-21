@@ -79,3 +79,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 /* end contact */
+
+
+
+
+// vidio rakit pc
+// Function to toggle custom modal and display image
+function toggleImage(imageSrc) {
+  // Get the custom modal and image element
+  var customModal = document.getElementById("customModal");
+  var modalImg = document.getElementById("img01");
+
+  // Open the modal and display the image
+  customModal.style.display = "block";
+  modalImg.src = imageSrc;
+
+  // Close the modal when clicked on X
+  var closeBtn = document.getElementsByClassName("modal-close")[0];
+  closeBtn.onclick = function() {
+    customModal.style.display = "none";
+  }
+
+  // Minimize image size when clicked
+  var minimizeBtn = document.getElementById("minimize-btn");
+  minimizeBtn.onclick = function() {
+    modalImg.style.maxWidth = "50%";
+    modalImg.style.maxHeight = "50vh";
+  }
+}
+

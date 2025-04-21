@@ -413,6 +413,67 @@
 }
 
 
+/* vidio rakit pc */
+/* Custom Modal background for fullscreen display */
+.custom-modal {
+  display: none; /* Hide by default */
+  position: fixed; /* Fixed position on screen */
+  z-index: 999; /* Ensure it is on top */
+  padding-top: 60px; /* Space from top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scrolling if content exceeds screen */
+  background-color: rgba(0, 0, 0, 0.9); /* Transparent dark background */
+}
+
+/* Image inside the custom modal */
+.modal-content {
+  margin: auto; /* Center the image */
+  display: block;
+  max-width: 90%; /* Max width of the image */
+  max-height: 80vh; /* Max height of the image */
+  border-radius: 12px; /* Rounded corners */
+}
+
+/* Close button (X) */
+.modal-close {
+  position: absolute;
+  top: 20px; /* From top */
+  right: 35px; /* From right */
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: aqua; /* Hover color */
+}
+
+/* Minimize button (at the bottom center of the screen) */
+#minimize-btn {
+  position: absolute;
+  bottom: 40px; /* Distance from the bottom */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Exact center */
+  background-color: aqua;
+  color: #111;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+#minimize-btn:hover {
+  background-color: white;
+  color: black;
+}
+
+
+
 
 /* end portfolio */
 
