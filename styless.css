@@ -428,7 +428,7 @@
   background-color: rgba(0, 0, 0, 0.9);
 }
 
-/* Gambar/video dalam modal */
+/* Video dalam modal */
 .modal-content {
   margin: auto;
   display: block;
@@ -471,6 +471,7 @@
   background-color: white;
   color: black;
 }
+
 
 
 

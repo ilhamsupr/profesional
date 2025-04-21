@@ -90,17 +90,20 @@ function toggleVideo() {
   var video = document.getElementById("video01");
   var videoSource = document.getElementById("videoSource");
 
-  // Pastikan video dimulai dari awal
-  videoSource.src = "gambar/rakit.mp4"; // Ubah ini sesuai video yang diinginkan
+  // Tampilkan modal
+  modal.style.display = "block";
+
+  // Atur sumber video dan pastikan video dimulai dari awal
+  videoSource.src = "gambar/rakit.mp4"; // Ganti dengan path video yang sesuai
   video.load(); // Memuat ulang video
   video.play(); // Memutar video
+  video.style.display = "block"; // Tampilkan video
 
-  // Tampilkan modal dan tombol minimize
-  modal.style.display = "block";
+  // Sembunyikan tombol minimize sementara
   document.getElementById("minimize-btn").style.display = "block";
 }
 
-// Fungsi untuk menutup modal
+// Fungsi untuk menutup modal dan menghentikan video
 function closeModal() {
   var modal = document.getElementById("customModal");
   var video = document.getElementById("video01");
@@ -130,6 +133,7 @@ function minimizeVideo() {
     modal.style.display = "none"; // Sembunyikan modal
   }, 300); // Tunggu beberapa detik sebelum menyembunyikan modal
 }
+
 
 
 
