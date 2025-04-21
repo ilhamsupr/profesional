@@ -133,8 +133,3 @@ function minimizeVideo() {
     modal.style.display = "none"; // Sembunyikan modal
   }, 300); // Tunggu beberapa detik sebelum menyembunyikan modal
 }
-
-
-
-
-
