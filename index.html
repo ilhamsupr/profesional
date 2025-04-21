@@ -187,8 +187,15 @@
 
       <!-- rakit pc -->
       <div class="portfolio-item" data-aos="zoom-in">
-        <img src="gambar/aku.jpeg" alt="">
-        <img src="gambar/rakit.mp4" alt="Building a computer" class="portfolio-image">
+        <!-- Gambar yang ditampilkan sebelum video diputar -->
+        <img src="gambar/aku.jpeg" alt="Building a computer" class="portfolio-image" id="image-card">
+    
+        <!-- Video yang akan diputar di modal -->
+        <video class="portfolio-image" id="video-card" style="display: none;" controls>
+            <source src="gambar/rakit.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    
         <p>Building a computer</p>
         <a href="#" onclick="toggleVideo(); return false;" class="portfolio-btn toggle-btn">View Video</a>
     </div>
@@ -196,12 +203,15 @@
     <!-- The Custom Modal -->
     <div id="customModal" class="custom-modal">
         <span class="modal-close" onclick="closeModal()">&times;</span>
+        <!-- Video yang muncul di dalam modal -->
         <video class="modal-content" id="video01" controls>
             <source id="videoSource" src="" type="video/mp4">
             Your browser does not support the video tag.
         </video>
+        <!-- Tombol minimize -->
         <a href="#" id="minimize-btn" onclick="minimizeVideo(); return false;">Minimize</a>
     </div>
+    
     
     
     

@@ -84,52 +84,50 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // vidio rakit pc
-// Fungsi untuk membuka video modal
+// Fungsi untuk toggle video (tampilkan video dan sembunyikan gambar)
 function toggleVideo() {
-  var modal = document.getElementById("customModal");
-  var video = document.getElementById("video01");
-  var videoSource = document.getElementById("videoSource");
+  var imageCard = document.getElementById('image-card');
+  var videoCard = document.getElementById('video-card');
+  var videoSource = document.getElementById('videoSource');
+  var video = document.getElementById('video01');
+  
+  // Menyembunyikan gambar, menampilkan video
+  imageCard.style.display = 'none';
+  videoCard.style.display = 'block';
+  
+  // Memasang sumber video dan memulai pemutaran video
+  videoSource.src = 'gambar/rakit.mp4';  // Ganti dengan path video Anda
+  video.load();
+  video.play();
 
-  // Tampilkan modal
-  modal.style.display = "block";
-
-  // Atur sumber video dan pastikan video dimulai dari awal
-  videoSource.src = "gambar/rakit.mp4"; // Ganti dengan path video yang sesuai
-  video.load(); // Memuat ulang video
-  video.play(); // Memutar video
-  video.style.display = "block"; // Tampilkan video
-
-  // Sembunyikan tombol minimize sementara
-  document.getElementById("minimize-btn").style.display = "block";
+  // Menampilkan modal
+  document.getElementById('customModal').style.display = 'block';
 }
 
 // Fungsi untuk menutup modal dan menghentikan video
 function closeModal() {
-  var modal = document.getElementById("customModal");
-  var video = document.getElementById("video01");
+  var video = document.getElementById('video01');
+  video.pause();  // Hentikan video
+  video.currentTime = 0;  // Setel video ke awal
 
-  // Sembunyikan modal dan hentikan video
-  modal.style.display = "none";
-  video.pause(); // Hentikan video
-  video.currentTime = 0; // Kembali ke awal video
-  document.getElementById("minimize-btn").style.display = "none"; // Sembunyikan tombol minimize
+  // Menampilkan gambar kembali, menyembunyikan video
+  document.getElementById('image-card').style.display = 'block';
+  document.getElementById('video-card').style.display = 'none';
+
+  // Menutup modal
+  document.getElementById('customModal').style.display = 'none'; 
 }
 
-// Fungsi untuk mengecilkan video
+// Fungsi untuk minimize video
 function minimizeVideo() {
-  var modal = document.getElementById("customModal");
-  var video = document.getElementById("video01");
+  var video = document.getElementById('video01');
+  video.pause();  // Hentikan video
+  video.currentTime = 0;  // Setel video ke awal
 
-  // Sembunyikan video dan tombol minimize
-  video.style.display = "none"; // Sembunyikan video
-  document.getElementById("minimize-btn").style.display = "none"; // Sembunyikan tombol minimize
+  // Menyembunyikan video dan menutup modal
+  document.getElementById('customModal').style.display = 'none';
 
-  // Hentikan video dan reset ke kondisi semula
-  video.pause(); // Hentikan video
-  video.currentTime = 0; // Kembali ke awal video
-
-  // Sembunyikan modal dan reset tampilan seperti sebelum video diputar
-  setTimeout(function() {
-    modal.style.display = "none"; // Sembunyikan modal
-  }, 300); // Tunggu beberapa detik sebelum menyembunyikan modal
+  // Menampilkan gambar kembali, menyembunyikan video
+  document.getElementById('image-card').style.display = 'block';
+  document.getElementById('video-card').style.display = 'none';
 }
