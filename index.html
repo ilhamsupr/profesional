@@ -189,17 +189,19 @@
       <div class="portfolio-item" data-aos="zoom-in">
         <img src="gambar/rakit.mp4" alt="Mechanical Keyboard" class="portfolio-image">
         <p>Building a computer</p>
-        <a href="#" onclick="toggleImage('gambar/rakit.mp4'); return false;" class="portfolio-btn toggle-btn">View Video</a>
+        <a href="#" onclick="toggleVideo(); return false;" class="portfolio-btn toggle-btn">View Video</a>
     </div>
     
     <!-- The Custom Modal -->
     <div id="customModal" class="custom-modal">
         <span class="modal-close" onclick="closeModal()">&times;</span>
         <video class="modal-content" id="video01" controls>
-            <source id="videoSource" type="video/mp4">
+            <source id="videoSource" src="" type="video/mp4">
+            Your browser does not support the video tag.
         </video>
-        <a href="#" id="minimize-btn" onclick="minimizeVideo()">Minimize</a>
+        <a href="#" id="minimize-btn" onclick="minimizeVideo(); return false;">Minimize</a>
     </div>
+    
     
     
       
