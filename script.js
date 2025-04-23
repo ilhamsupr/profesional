@@ -134,12 +134,13 @@ function minimizeVideo() {
 
 
 // kursor
+// Menambahkan elemen "ekor roket" pada body
+const cursor = document.createElement('div');
+cursor.classList.add('cursor');
+document.body.appendChild(cursor);
 
-document.addEventListener('mousemove', function(e) {
-  var rocket = document.querySelector('body');
-  var rocketPosX = e.pageX - 25;  // Menyesuaikan posisi kursor (setengah lebar gambar roket)
-  var rocketPosY = e.pageY - 25;  // Menyesuaikan posisi kursor (setengah tinggi gambar roket)
-
-  // Mengubah posisi gambar roket
-  rocket.style.cursor = `url('gambar/rocket.png') ${rocketPosX} ${rocketPosY}, auto`;
+// Fungsi untuk mengubah posisi kursor
+document.addEventListener('mousemove', (e) => {
+  cursor.style.left = `${e.pageX}px`;
+  cursor.style.top = `${e.pageY}px`;
 });
