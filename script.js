@@ -139,7 +139,7 @@ const cursor = document.createElement('div');
 cursor.classList.add('cursor');
 document.body.appendChild(cursor);
 
-// Membuat elemen ekor roket dan array untuk melacak elemen-ekor
+// Array untuk menyimpan elemen ekor
 let rocketTail = [];
 let trailLength = 10;  // Panjang ekor roket
 
@@ -163,7 +163,8 @@ document.addEventListener('mousemove', (e) => {
 
   // Mengupdate posisi ekor
   rocketTail.forEach((tail, index) => {
-    tail.style.left = `${e.pageX - (index * 5)}px`; // Menyesuaikan posisi horizontal
-    tail.style.top = `${e.pageY - (index * 5)}px`; // Menyesuaikan posisi vertikal
+    tail.style.left = `${e.pageX - (index * 10)}px`; // Menyesuaikan posisi horizontal
+    tail.style.top = `${e.pageY - (index * 10)}px`; // Menyesuaikan posisi vertikal
   });
 });
+
