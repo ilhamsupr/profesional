@@ -163,8 +163,12 @@ document.addEventListener('mousemove', (e) => {
 
   // Mengupdate posisi ekor
   rocketTail.forEach((tail, index) => {
-    tail.style.left = `${e.pageX - (index * 10)}px`; // Menyesuaikan posisi horizontal
-    tail.style.top = `${e.pageY - (index * 10)}px`; // Menyesuaikan posisi vertikal
+    // Membuat ekor bergerak dengan kecepatan yang lebih lambat seiring menjauh dari kursor
+    let xOffset = (index * 10) + Math.random() * 5;  // Posisi X dengan offset acak
+    let yOffset = (index * 10) + Math.random() * 5;  // Posisi Y dengan offset acak
+    tail.style.left = `${e.pageX - xOffset}px`;  // Posisi ekor bergerak ke belakang kursor
+    tail.style.top = `${e.pageY - yOffset}px`;   // Posisi ekor bergerak ke belakang kursor
   });
 });
+
 
