@@ -575,7 +575,7 @@
 .rocket-tail {
   position: absolute;
   width: 5px;
-  height: 30px;
+  height: 15px;
   background-color: aqua;
   pointer-events: none;
   transform: translate(-50%, -50%);
@@ -595,3 +595,4 @@
     opacity: 0;
   }
 }
+
