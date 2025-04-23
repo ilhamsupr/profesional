@@ -553,25 +553,3 @@
 
 /* end contact */
 
-
-/* Gaya dasar kursor */
-.rocket-flame {
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  pointer-events: none;
-  background: linear-gradient(to bottom, #00ffff, #006666);
-  transform: rotate(15deg);
-  opacity: 0.8;
-  border-radius: 30% 30% 50% 50%;
-  filter: blur(1px);
-  animation: flameOut 0.4s ease-out forwards;
-}
-
-@keyframes flameOut {
-  to {
-    opacity: 0;
-    transform: translateY(10px) scaleY(0.3) rotate(15deg);
-    filter: blur(3px);
-  }
-}

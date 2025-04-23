@@ -133,17 +133,3 @@ function minimizeVideo() {
 }
 
 
-
-// cursor
-
-document.addEventListener('mousemove', (e) => {
-  const flame = document.createElement('div');
-  flame.className = 'rocket-flame';
-  flame.style.left = `${e.clientX}px`;
-  flame.style.top = `${e.clientY}px`;
-  document.body.appendChild(flame);
-
-  setTimeout(() => {
-    flame.remove();
-  }, 400);
-});
