@@ -136,23 +136,29 @@ function minimizeVideo() {
 
 // cursor
 
+// Event untuk desktop (mousemove)
 document.addEventListener('mousemove', (e) => {
-  // Posisi kursor roket
-  rocketCursor.style.left = `${e.clientX - 15}px`;
-  rocketCursor.style.top = `${e.clientY - 15}px`;
+  createRocketFlame(e.clientX, e.clientY);
+});
 
-  // Membuat efek api roket
+// Event untuk mobile (touchmove)
+document.addEventListener('touchmove', (e) => {
+  const touch = e.touches[0];
+  createRocketFlame(touch.clientX, touch.clientY);
+});
+
+// Fungsi untuk membuat efek api roket
+function createRocketFlame(x, y) {
   const flame = document.createElement('div');
   flame.className = 'rocket-flame';
-
-  // Menyesuaikan posisi api agar lebih dekat dengan kursor
-  flame.style.left = `${e.clientX - 12}px`;  // Sesuaikan dengan posisi kursor
-  flame.style.top = `${e.clientY + 10}px`;   // Sesuaikan dengan posisi bawah kursor
+  flame.style.left = `${x - 12}px`;  // Posisi api lebih dekat dengan kursor
+  flame.style.top = `${y + 10}px`;   // Posisi api sedikit lebih bawah
   document.body.appendChild(flame);
 
   // Menghapus api setelah animasi selesai
   setTimeout(() => {
     flame.remove();
   }, 400);
-});
+}
+
 
