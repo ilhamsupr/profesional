@@ -560,18 +560,6 @@
 
 /* kursor */
 /* Style dasar untuk efek kursor */
-.cursor {
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  background-color: aqua;
-  border-radius: 50%;
-  pointer-events: none;  /* Agar kursor tidak mengganggu interaksi elemen */
-  transform: translate(-50%, -50%);
-  z-index: 9999;  /* Pastikan kursor tetap di atas elemen lainnya */
-}
-
-/* Style untuk ekor roket */
 .rocket-flame {
   position: absolute;
   width: 25px;
@@ -584,12 +572,3 @@
   filter: blur(1px);
   animation: flameOut 0.4s ease-out forwards;
 }
-
-@keyframes flameOut {
-  to {
-    opacity: 0;
-    transform: translateY(10px) scaleY(0.3) rotate(15deg);
-    filter: blur(3px);
-  }
-}
-
