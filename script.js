@@ -131,3 +131,14 @@ function minimizeVideo() {
   document.getElementById('image-card').style.display = 'block';
   document.getElementById('video-card').style.display = 'none';
 }
+
+
+
+// cursor
+
+const cursor = document.querySelector('.custom-cursor');
+
+document.addEventListener('mousemove', e => {
+  cursor.style.left = e.pageX + 'px';
+  cursor.style.top = e.pageY + 'px';
+});
