@@ -134,13 +134,22 @@ function minimizeVideo() {
 
 
 // kursor
-// Menambahkan elemen "ekor roket" pada body
+// Membuat elemen kursor utama
 const cursor = document.createElement('div');
 cursor.classList.add('cursor');
 document.body.appendChild(cursor);
 
-// Fungsi untuk mengubah posisi kursor
+// Membuat elemen ekor roket
+const rocketTail = document.createElement('div');
+rocketTail.classList.add('rocket-tail');
+document.body.appendChild(rocketTail);
+
+// Fungsi untuk mengubah posisi kursor dan ekor roket
 document.addEventListener('mousemove', (e) => {
   cursor.style.left = `${e.pageX}px`;
   cursor.style.top = `${e.pageY}px`;
+
+  rocketTail.style.left = `${e.pageX}px`;
+  rocketTail.style.top = `${e.pageY}px`;
 });
+

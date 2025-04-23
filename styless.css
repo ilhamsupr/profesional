@@ -559,7 +559,6 @@
 
 
 /* kursor */
-
 /* Style dasar untuk efek kursor */
 .cursor {
   position: absolute;
@@ -569,17 +568,29 @@
   border-radius: 50%;
   pointer-events: none;  /* Agar kursor tidak mengganggu interaksi elemen */
   transform: translate(-50%, -50%);
-  animation: rocket-trail 0.3s ease-out infinite;
+  z-index: 9999;  /* Pastikan kursor tetap di atas elemen lainnya */
 }
 
-/* Efek ekor roket */
+/* Style untuk ekor roket */
+.rocket-tail {
+  position: absolute;
+  width: 5px;
+  height: 30px;
+  background-color: aqua;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  animation: rocket-trail 0.3s ease-out infinite;
+  z-index: 9998;  /* Pastikan ekor roket berada di bawah kursor */
+}
+
+/* Efek ekor roket (mengecil dan hilang) */
 @keyframes rocket-trail {
   0% {
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
   }
   100% {
-    transform: translate(-50%, -50%) scale(0.5);
+    transform: translate(-50%, -100%) scale(0.5);
     opacity: 0;
   }
 }
