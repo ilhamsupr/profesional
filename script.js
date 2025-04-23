@@ -137,22 +137,13 @@ function minimizeVideo() {
 // cursor
 
 document.addEventListener('mousemove', (e) => {
-  // Posisi kursor roket
-  rocketCursor.style.left = `${e.clientX - 15}px`;
-  rocketCursor.style.top = `${e.clientY - 15}px`;
-
-  // Membuat efek api roket
   const flame = document.createElement('div');
   flame.className = 'rocket-flame';
-
-  // Menyesuaikan posisi api agar lebih dekat dengan kursor
-  flame.style.left = `${e.clientX - 12}px`;  // Sesuaikan dengan posisi kursor
-  flame.style.top = `${e.clientY + 10}px`;   // Sesuaikan dengan posisi bawah kursor
+  flame.style.left = `${e.clientX}px`;
+  flame.style.top = `${e.clientY}px`;
   document.body.appendChild(flame);
 
-  // Menghapus api setelah animasi selesai
   setTimeout(() => {
     flame.remove();
   }, 400);
 });
-
