@@ -134,40 +134,16 @@ function minimizeVideo() {
 
 
 // kursor
-// Membuat elemen kursor utama
-const cursor = document.createElement('div');
-cursor.classList.add('cursor');
-document.body.appendChild(cursor);
-
-// Array untuk menyimpan elemen ekor
-let rocketTail = [];
-let trailLength = 10;  // Panjang ekor roket
-
-// Fungsi untuk membuat ekor roket dan mengubah posisi kursor
 document.addEventListener('mousemove', (e) => {
-  cursor.style.left = `${e.pageX}px`;
-  cursor.style.top = `${e.pageY}px`;
+  const flame = document.createElement('div');
+  flame.className = 'rocket-flame';
+  flame.style.left = `${e.clientX}px`;
+  flame.style.top = `${e.clientY}px`;
+  document.body.appendChild(flame);
 
-  // Membuat elemen ekor baru
-  let tail = document.createElement('div');
-  tail.classList.add('rocket-tail');
-  document.body.appendChild(tail);
-
-  // Menambahkan ekor ke array
-  rocketTail.push(tail);
-
-  // Menghapus ekor lama (untuk mencegah kebanyakan elemen)
-  if (rocketTail.length > trailLength) {
-    document.body.removeChild(rocketTail.shift());
-  }
-
-  // Mengupdate posisi ekor
-  rocketTail.forEach((tail, index) => {
-    let xOffset = (index * 10) - Math.random() * 5;  // Posisi X dengan offset acak
-    let yOffset = (index * 10) - Math.random() * 5;  // Posisi Y dengan offset acak
-    tail.style.left = `${e.pageX - xOffset}px`;  // Posisi ekor bergerak ke belakang kursor
-    tail.style.top = `${e.pageY - yOffset}px`;   // Posisi ekor bergerak ke belakang kursor
-  });
+  setTimeout(() => {
+    flame.remove();
+  }, 400);
 });
 
 

@@ -572,27 +572,24 @@
 }
 
 /* Style untuk ekor roket */
-.rocket-tail {
+.rocket-flame {
   position: absolute;
-  width: 5px;
-  height: 15px;
-  background-color: aqua;
+  width: 25px;
+  height: 25px;
   pointer-events: none;
-  transform: translate(-50%, -50%);
-  opacity: 0.7;
-  animation: rocket-trail 0.5s ease-out forwards;
-  z-index: 9998;  /* Pastikan ekor roket berada di bawah kursor */
+  background: linear-gradient(to bottom, #00ffff, #006666);
+  transform: rotate(15deg);
+  opacity: 0.8;
+  border-radius: 30% 30% 50% 50%;
+  filter: blur(1px);
+  animation: flameOut 0.4s ease-out forwards;
 }
 
-/* Efek ekor roket (mengecil dan hilang) */
-@keyframes rocket-trail {
-  0% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(0.5);
+@keyframes flameOut {
+  to {
     opacity: 0;
+    transform: translateY(10px) scaleY(0.3) rotate(15deg);
+    filter: blur(3px);
   }
 }
 
