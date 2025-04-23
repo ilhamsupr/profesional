@@ -137,8 +137,20 @@ function minimizeVideo() {
 // cursor
 
 const cursor = document.querySelector('.custom-cursor');
+const cursorTail = document.querySelector('.cursor-tail');
 
 document.addEventListener('mousemove', e => {
   cursor.style.left = e.pageX + 'px';
   cursor.style.top = e.pageY + 'px';
+
+  cursorTail.style.left = e.pageX + 'px';
+  cursorTail.style.top = e.pageY + 'px';
+
+  cursor.classList.add('active');
+  cursorTail.classList.add('active');
+});
+
+document.addEventListener('mouseleave', () => {
+  cursor.classList.remove('active');
+  cursorTail.classList.remove('active');
 });
