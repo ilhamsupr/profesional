@@ -133,3 +133,13 @@ function minimizeVideo() {
 }
 
 
+// kursor
+
+document.addEventListener('mousemove', function(e) {
+  var rocket = document.querySelector('body');
+  var rocketPosX = e.pageX - 25;  // Menyesuaikan posisi kursor (setengah lebar gambar roket)
+  var rocketPosY = e.pageY - 25;  // Menyesuaikan posisi kursor (setengah tinggi gambar roket)
+
+  // Mengubah posisi gambar roket
+  rocket.style.cursor = `url('gambar/rocket.png') ${rocketPosX} ${rocketPosY}, auto`;
+});

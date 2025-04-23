@@ -553,3 +553,31 @@
 
 /* end contact */
 
+
+
+
+
+
+/* kursor */
+
+/* Kursor roket */
+body {
+  cursor: url('gambar/rocket.png'), auto; /* Ganti 'gambar/rocket.png' dengan path yang sesuai */
+}
+
+/* Tambahkan efek animasi jika diperlukan */
+@keyframes rocket-move {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+body {
+  animation: rocket-move 1s infinite;
+}
