@@ -139,17 +139,31 @@ const cursor = document.createElement('div');
 cursor.classList.add('cursor');
 document.body.appendChild(cursor);
 
-// Membuat elemen ekor roket
-const rocketTail = document.createElement('div');
-rocketTail.classList.add('rocket-tail');
-document.body.appendChild(rocketTail);
+// Membuat elemen ekor roket dan array untuk melacak elemen-ekor
+let rocketTail = [];
+let trailLength = 10;  // Panjang ekor roket
 
-// Fungsi untuk mengubah posisi kursor dan ekor roket
+// Fungsi untuk membuat ekor roket dan mengubah posisi kursor
 document.addEventListener('mousemove', (e) => {
   cursor.style.left = `${e.pageX}px`;
   cursor.style.top = `${e.pageY}px`;
 
-  rocketTail.style.left = `${e.pageX}px`;
-  rocketTail.style.top = `${e.pageY}px`;
-});
+  // Membuat elemen ekor baru
+  let tail = document.createElement('div');
+  tail.classList.add('rocket-tail');
+  document.body.appendChild(tail);
+  
+  // Menambahkan ekor ke array
+  rocketTail.push(tail);
 
+  // Menghapus ekor lama (untuk mencegah kebanyakan elemen)
+  if (rocketTail.length > trailLength) {
+    document.body.removeChild(rocketTail.shift());
+  }
+
+  // Mengupdate posisi ekor
+  rocketTail.forEach((tail, index) => {
+    tail.style.left = `${e.pageX - (index * 5)}px`; // Menyesuaikan posisi horizontal
+    tail.style.top = `${e.pageY - (index * 5)}px`; // Menyesuaikan posisi vertikal
+  });
+});
