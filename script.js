@@ -96,7 +96,7 @@ function toggleVideo() {
   videoCard.style.display = 'block';
   
   // Memasang sumber video dan memulai pemutaran video
-  videoSource.src = 'gambar/rakit.mp4';  // Ganti dengan path video Anda
+  videoSource.src = 'gambar/gambar/wel.mp4';  // Ganti dengan path video Anda
   video.load();
   video.play();
 
