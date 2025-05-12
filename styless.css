@@ -109,6 +109,7 @@
   display: flex;
   justify-content: center;
   padding-left: 30px;
+  object-fit: cover;
 }
 
 .home-image img {
@@ -120,6 +121,7 @@
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   transform: scale(1);
   margin: 20px;
+  object-fit: cover;
 }
 
 .home-image img:hover {
