@@ -109,7 +109,6 @@
   display: flex;
   justify-content: center;
   padding-left: 30px;
-  object-fit: cover;
 }
 
 .home-image img {
